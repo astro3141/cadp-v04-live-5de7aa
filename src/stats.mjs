@@ -10,3 +10,8 @@ export function median(xs) {
   if (sorted.length % 2 === 1) return sorted[middle];
   return mean([sorted[middle - 1], sorted[middle]]);
 }
+
+export function range(xs) {
+  if (xs.length === 0) return 0;
+  return Math.max(...xs) - Math.min(...xs);
+}
