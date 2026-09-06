@@ -10,3 +10,13 @@ export function median(xs) {
   if (sorted.length % 2 === 1) return sorted[middle];
   return mean([sorted[middle - 1], sorted[middle]]);
 }
+
+export function variance(xs) {
+  if (xs.length === 0) return 0;
+  return mean(xs.map((x) => (x - mean(xs)) ** 2));
+}
+
+export function stddev(xs) {
+  if (xs.length === 0) return 0;
+  return Math.sqrt(variance(xs));
+}
